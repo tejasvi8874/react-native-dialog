@@ -96,7 +96,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
       transparent={true}
       visible={visible}
       {...nodeProps}
-    ><SafeAreaView><ScrollView contentContainerStyle={{ flex: 1, alignItems: "center", justifyContent: "center", }}>
+    ><SafeAreaView>
       <KeyboardAvoidingView
         behavior={iOS ? "padding" : undefined}
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
@@ -118,7 +118,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
                 <View style={styles.buttonSeparatorVertical} />
               )}
               <ScrollView
-                style={[
+                contentContainerStyle={[
                   styles.footer,
                   verticalButtons ? styles.footerVertical : null,
                   footerStyle,
@@ -134,7 +134,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
           )}
         </View>
       </KeyboardAvoidingView>
-    </ScrollView></SafeAreaView></Modal>
+    </SafeAreaView></Modal>
   );
 };
 
