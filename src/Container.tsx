@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
   ScrollView,
+  SafeAreaView,
   PlatformColor,
   ViewStyle,
   StyleProp,
@@ -95,7 +96,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
       transparent={true}
       visible={visible}
       {...nodeProps}
-    ><ScrollView contentContainerStyle={{ flex: 1, alignItems: "center", justifyContent: "center", }}>
+    ><SafeAreaView><ScrollView contentContainerStyle={{ flex: 1, alignItems: "center", justifyContent: "center", }}>
       <KeyboardAvoidingView
         behavior={iOS ? "padding" : undefined}
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
@@ -133,7 +134,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
           )}
         </View>
       </KeyboardAvoidingView>
-    </ScrollView></Modal>
+    </ScrollView></SafeAreaView></Modal>
   );
 };
 
