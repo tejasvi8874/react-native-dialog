@@ -95,7 +95,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
       transparent={true}
       visible={visible}
       {...nodeProps}
-    ><ScrollView>
+    ><ScrollView contentContainerStyle={styles.centeredView}>
       <KeyboardAvoidingView
         behavior={iOS ? "padding" : undefined}
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
