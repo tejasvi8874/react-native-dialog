@@ -101,7 +101,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
         style={styles.centeredView}
       >
-        <ScrollView style={[styles.content, contentStyle]}>
+        <View style={[styles.content, contentStyle]}>
           {Platform.OS === "ios" && blurComponentIOS}
           {Platform.OS === "ios" && !blurComponentIOS && (
             <View style={[styles.blur, blurStyle]} />
@@ -116,7 +116,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
               {Platform.OS === "ios" && (
                 <View style={styles.buttonSeparatorVertical} />
               )}
-              <View
+              <ScrollView
                 style={[
                   styles.footer,
                   verticalButtons ? styles.footerVertical : null,
@@ -128,10 +128,10 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
                     key: `dialog-button-${i}`,
                   })
                 )}
-              </View>
+              </ScrollView>
             </>
           )}
-        </ScrollView>
+        </View>
       </KeyboardAvoidingView>
     </Modal>
   );
