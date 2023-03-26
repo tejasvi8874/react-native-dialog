@@ -117,7 +117,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
               {Platform.OS === "ios" && (
                 <View style={styles.buttonSeparatorVertical} />
               )}
-              <View
+              <ScrollView
                 style={[
                   styles.footer,
                   verticalButtons ? styles.footerVertical : null,
@@ -129,7 +129,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
                     key: `dialog-button-${i}`,
                   })
                 )}
-              </View>
+              </ScrollView>
             </>
           )}
         </View>
