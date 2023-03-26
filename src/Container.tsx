@@ -95,7 +95,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
       transparent={true}
       visible={visible}
       {...nodeProps}
-    >
+    ><ScrollView>
       <KeyboardAvoidingView
         behavior={iOS ? "padding" : undefined}
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
@@ -116,7 +116,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
               {Platform.OS === "ios" && (
                 <View style={styles.buttonSeparatorVertical} />
               )}
-              <ScrollView
+              <View
                 style={[
                   styles.footer,
                   verticalButtons ? styles.footerVertical : null,
@@ -128,12 +128,12 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
                     key: `dialog-button-${i}`,
                   })
                 )}
-              </ScrollView>
+              </View>
             </>
           )}
         </View>
       </KeyboardAvoidingView>
-    </Modal>
+    </ScrollView></Modal>
   );
 };
 
