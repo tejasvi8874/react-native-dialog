@@ -5,6 +5,7 @@ import {
   Platform,
   StyleSheet,
   View,
+  ScrollView,
   PlatformColor,
   ViewStyle,
   StyleProp,
@@ -100,7 +101,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
         keyboardVerticalOffset={iOS ? keyboardVerticalOffset : undefined}
         style={styles.centeredView}
       >
-        <View style={[styles.content, contentStyle]}>
+        <ScrollView style={[styles.content, contentStyle]}>
           {Platform.OS === "ios" && blurComponentIOS}
           {Platform.OS === "ios" && !blurComponentIOS && (
             <View style={[styles.blur, blurStyle]} />
@@ -130,7 +131,7 @@ const DialogContainer: React.FC<DialogContainerProps> = (props) => {
               </View>
             </>
           )}
-        </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     </Modal>
   );
